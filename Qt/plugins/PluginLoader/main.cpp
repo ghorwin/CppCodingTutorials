@@ -16,5 +16,5 @@ int main(int argc, char *argv[]) {
 	p.doSomething(dummy);
 #endif // TEST_DIRECT_LINKING
 
-	return a.exec();
+	return EXIT_SUCCESS;
 }
