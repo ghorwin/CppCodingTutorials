@@ -80,9 +80,9 @@ void PluginLoader::loadPlugin(const QString & pluginPath, PluginData & pd) {
 
 	QObject * plugin = nullptr;
 	// add path to plugin to library search paths
-	qApp->addLibraryPath(pluginDir.absolutePath());
-	qDebug() << qApp->libraryPaths();
-	bool success = pd.m_loader->load(); // load the plugin
+	qApp->addLibraryPath(pluginDir.absolutePath()); // BUG: THIS DOES NOT WORK
+	qDebug() << qApp->libraryPaths(); // Shows our so directory
+	bool success = pd.m_loader->load(); // load the plugin - failes to load plugin, as dependency libTestLib.so is not found
 	// and remove the path again, so that subsequent libs won't load wrong dll/so-files
 	qApp->removeLibraryPath(pluginDir.absolutePath());
 	if (success) {
