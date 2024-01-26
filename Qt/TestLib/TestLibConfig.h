@@ -1,0 +1,5 @@
+#ifndef TESTLIBCONFIG_H
+#define TESTLIBCONFIG_H
+
+
+#endif // TESTLIBCONFIG_H
